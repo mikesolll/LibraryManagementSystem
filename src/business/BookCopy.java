@@ -1,13 +1,15 @@
 package business;
 
-public class BookCopy {
+import java.io.Serializable;
+
+public class BookCopy implements Serializable {
 
 	private String copyNo;
 	private boolean availablity;
 	private Book book;
 	
 	BookCopy(String copyNo, Book book) {
-		super();
+
 		this.copyNo = copyNo;
 		this.book = book;
 	}
