@@ -1,23 +1,36 @@
 package dataaccess;
 
+
+
+
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataAccessSystem<T> implements DataAccess<T> {
     private  String OUTPUT_DIR;
+    FileOutputStream fileOutputStream;
+    ObjectOutputStream outputStream;
+    FileInputStream fileInputStream;
+    ObjectInputStream input;
+    List<T> lists= new ArrayList<>();
+
     DataAccessSystem(String directory){
         OUTPUT_DIR=System.getProperty("user.dir")
                 +"\\src\\docs\\"+directory+".txt" ;
+
+
     }
 
 
-    public boolean saveObject(T t){
+    public boolean saveObject(T t)  {
         try{
-            FileOutputStream fileOutputStream= new FileOutputStream(OUTPUT_DIR);
-            ObjectOutputStream output= new ObjectOutputStream(fileOutputStream);
-            output.writeObject(t);
-            output.close();
+            fileOutputStream= new FileOutputStream(OUTPUT_DIR);
+            outputStream= new ObjectOutputStream(fileOutputStream);
+            lists.add(t);
+            outputStream.writeObject(lists);
+            outputStream.close();
             return true;
 
         }catch (FileNotFoundException e){
@@ -29,45 +42,38 @@ public class DataAccessSystem<T> implements DataAccess<T> {
         }
 
 
+
     }
+    /*public class AppendingObjectOutputStream extends ObjectOutputStream {
 
-    public T getObject(){
-        try {
-            FileInputStream fileInputStream= new FileInputStream(new File(OUTPUT_DIR));
-            ObjectInputStream input= new ObjectInputStream(fileInputStream);
-            T obj= (T) input.readObject();
-            input.close();
-            return obj;
-
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
-        }catch (ClassNotFoundException e){
-            e.printStackTrace();
+        public AppendingObjectOutputStream(OutputStream out) throws IOException {
+            super(out);
         }
-        return null;
-    }
 
+        @Override
+        protected void writeStreamHeader() throws IOException {
+            // do not write a header, but reset:
+            // this line added after another question
+            // showed a problem with the original
+            reset();
+        }
+
+    }*/
     @Override
     public List<T> getAllObject() {
-        List<T> objects;
-        try {
-            FileInputStream fileInputStream= new FileInputStream(new File(OUTPUT_DIR));
-            ObjectInputStream input= new ObjectInputStream(fileInputStream);
+        List<T> objects= new ArrayList<>();
+        boolean isEmpty=false;
+               try{
 
+                  FileInputStream fileInputStream= new FileInputStream(new File(OUTPUT_DIR));
+                  ObjectInputStream input= new ObjectInputStream(fileInputStream);
 
-            objects= (List<T>) input.readObject();
-            input.close();
-            return objects;
+                   objects=(List<T>) input.readObject();
+               }catch (Exception e){
+                   e.printStackTrace();
+               }
 
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
-        }catch (ClassNotFoundException e){
-            e.printStackTrace();
-        }
-        return null;
+               return objects;
+
     }
 }
