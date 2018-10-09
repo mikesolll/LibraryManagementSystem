@@ -1,9 +1,10 @@
 package business;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class CheckOutEntry {
+public class CheckOutEntry implements Serializable {
 	private LocalDate dateIssued;
 	private LocalDate dueDate;
 	private double fine;
@@ -11,7 +12,7 @@ public class CheckOutEntry {
 	private BookCopy book;
 
 	CheckOutEntry(LocalDate dateIssued, LocalDate dueDate, double fine, LocalDate datePaid, BookCopy book) {
-		super();
+		
 		this.dateIssued = dateIssued;
 		this.dueDate = dueDate;
 		this.fine = fine;
