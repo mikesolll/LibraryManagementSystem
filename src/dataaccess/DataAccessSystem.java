@@ -6,6 +6,7 @@ package dataaccess;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DataAccessSystem<T> implements DataAccess<T> {
@@ -23,10 +24,17 @@ public class DataAccessSystem<T> implements DataAccess<T> {
 
 
     public boolean saveObject(T t)  {
+        List<T> list= new ArrayList<>();
+        list.add(t);
+        return saveAllObject(list);
+    }
+
+    public boolean saveAllObject(List<T>  tList){
+
         try{
+            lists.addAll(tList);
             fileOutputStream= new FileOutputStream(OUTPUT_DIR);
             outputStream= new ObjectOutputStream(fileOutputStream);
-            lists.add(t);
             outputStream.writeObject(lists);
             outputStream.close();
             return true;
@@ -38,6 +46,7 @@ public class DataAccessSystem<T> implements DataAccess<T> {
             e.printStackTrace();
             return false;
         }
+
 
     }
 

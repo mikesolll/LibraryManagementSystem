@@ -9,4 +9,6 @@ public interface DataAccess<T> {
 
     List<T> getAllObject();
 
+    boolean saveAllObject(List<T> t);
+
 }
