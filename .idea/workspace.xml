@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/ui/Administrator.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dataaccess/Test.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/dataaccess/DataAccess.class" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/dataaccess/DataAccess.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/dataaccess/DataAccessSystem.class" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/dataaccess/DataAccessSystem.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -107,24 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dataaccess/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#197#203#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="user.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/docs/user.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="87" lean-forward="true" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
+            <state relative-caret-position="27">
+              <caret line="1" column="163" lean-forward="true" selection-start-line="1" selection-start-column="163" selection-end-line="1" selection-end-column="163" />
               <folding />
             </state>
           </provider>
@@ -152,11 +141,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HashMapStorage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HashMapStorage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dataaccess/HashMapStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            <state relative-caret-position="540">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#143#144#0" expanded="true" />
                 <element signature="e#183#184#0" expanded="true" />
@@ -462,12 +451,12 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1539040846231" duration="21978000" />
+      <workItem from="1539040846231" duration="22224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23280000" />
+    <option name="totallyTimeSpent" value="23526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -680,21 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataaccess/HashMapStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding>
-            <element signature="e#143#144#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/business/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -722,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/docs/user.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="87" lean-forward="true" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
+        <state relative-caret-position="27">
+          <caret line="1" column="163" lean-forward="true" selection-start-line="1" selection-start-column="163" selection-end-line="1" selection-end-column="163" />
           <folding />
         </state>
       </provider>
@@ -750,11 +724,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataaccess/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="501">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataaccess/HashMapStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#197#203#0" expanded="true" />
+            <element signature="e#143#144#0" expanded="true" />
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,8 +12,6 @@ public class DataAccessSystem<T> implements DataAccess<T> {
     private  String OUTPUT_DIR;
     FileOutputStream fileOutputStream;
     ObjectOutputStream outputStream;
-    FileInputStream fileInputStream;
-    ObjectInputStream input;
     List<T> lists= new ArrayList<>();
 
     DataAccessSystem(String directory){
@@ -41,24 +39,8 @@ public class DataAccessSystem<T> implements DataAccess<T> {
             return false;
         }
 
-
-
     }
-    /*public class AppendingObjectOutputStream extends ObjectOutputStream {
 
-        public AppendingObjectOutputStream(OutputStream out) throws IOException {
-            super(out);
-        }
-
-        @Override
-        protected void writeStreamHeader() throws IOException {
-            // do not write a header, but reset:
-            // this line added after another question
-            // showed a problem with the original
-            reset();
-        }
-
-    }*/
     @Override
     public List<T> getAllObject() {
         List<T> objects= new ArrayList<>();
