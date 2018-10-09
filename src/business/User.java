@@ -4,11 +4,13 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
+    private Person person;
     private String username;
 
     private String password;
 
-    public User(String username, String password){
+    public User(Person person,String username, String password){
+        this.person=person;
         this.username=username;
         this.password=password;
 
@@ -29,6 +31,14 @@ public class User implements Serializable {
 
     public String getPassword() {
         return password;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     @Override

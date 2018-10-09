@@ -1,6 +1,8 @@
 package business;
 
-public class Adminstrator extends PersonRole{
+import java.io.Serializable;
+
+public class Adminstrator extends PersonRole implements Serializable{
 
 	public static  void addMember(Person person,String Id) {
 		person.addPersonRole(new LibraryMember(Id));

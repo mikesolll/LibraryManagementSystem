@@ -51,6 +51,11 @@ public class Person implements Serializable {
 	public void addPersonRole(PersonRole Role) {
 		personRole.add(Role);
 	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
 		return "Person [firstName=" + firstName + 

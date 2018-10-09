@@ -1,6 +1,12 @@
 /Administrator.class
+<<<<<<< HEAD
 /AdministratorController.class
 /Main.class
 /AddMemberController.class
 /EditMemberController.class
 /AddBookController.class
+=======
+/LoginController.class
+/LibrarianController.class
+/CheckOutController.class
+>>>>>>> 5bdd37038f2902c3c96314f0b1f4c66517c668e7

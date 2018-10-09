@@ -1,23 +1,42 @@
 package dataaccess;
 
+
+
+
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DataAccessSystem<T> implements DataAccess<T> {
     private  String OUTPUT_DIR;
+    FileOutputStream fileOutputStream;
+    ObjectOutputStream outputStream;
+    List<T> lists= new ArrayList<>();
+
     DataAccessSystem(String directory){
         OUTPUT_DIR=System.getProperty("user.dir")
                 +"\\src\\docs\\"+directory+".txt" ;
+
+
     }
 
 
-    public boolean saveObject(T t){
+    public boolean saveObject(T t)  {
+        List<T> list= new ArrayList<>();
+        list.add(t);
+        return saveAllObject(list);
+    }
+
+    public boolean saveAllObject(List<T>  tList){
+
         try{
-            FileOutputStream fileOutputStream= new FileOutputStream(OUTPUT_DIR);
-            ObjectOutputStream output= new ObjectOutputStream(fileOutputStream);
-            output.writeObject(t);
-            output.close();
+            lists.addAll(tList);
+            fileOutputStream= new FileOutputStream(OUTPUT_DIR);
+            outputStream= new ObjectOutputStream(fileOutputStream);
+            outputStream.writeObject(lists);
+            outputStream.close();
             return true;
 
         }catch (FileNotFoundException e){
@@ -31,43 +50,21 @@ public class DataAccessSystem<T> implements DataAccess<T> {
 
     }
 
-    public T getObject(){
-        try {
-            FileInputStream fileInputStream= new FileInputStream(new File(OUTPUT_DIR));
-            ObjectInputStream input= new ObjectInputStream(fileInputStream);
-            T obj= (T) input.readObject();
-            input.close();
-            return obj;
-
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
-        }catch (ClassNotFoundException e){
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     @Override
     public List<T> getAllObject() {
-        List<T> objects;
-        try {
-            FileInputStream fileInputStream= new FileInputStream(new File(OUTPUT_DIR));
-            ObjectInputStream input= new ObjectInputStream(fileInputStream);
+        List<T> objects= new ArrayList<>();
+        boolean isEmpty=false;
+               try{
 
+                  FileInputStream fileInputStream= new FileInputStream(new File(OUTPUT_DIR));
+                  ObjectInputStream input= new ObjectInputStream(fileInputStream);
 
-            objects= (List<T>) input.readObject();
-            input.close();
-            return objects;
+                   objects=(List<T>) input.readObject();
+               }catch (Exception e){
+                   e.printStackTrace();
+               }
 
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
-        }catch (ClassNotFoundException e){
-            e.printStackTrace();
-        }
-        return null;
+               return objects;
+
     }
 }

@@ -1,6 +1,8 @@
 package business;
 
-public class LibraryMember extends PersonRole{
+import java.io.Serializable;
+
+public class LibraryMember extends PersonRole implements Serializable{
 
 	private String memberID;
 	private CheckoutRecord checkoutPaper;
