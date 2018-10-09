@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class BookCopy implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1850632322493586658L;
 	private String copyNo;
 	private boolean availablity;
 	private Book book;

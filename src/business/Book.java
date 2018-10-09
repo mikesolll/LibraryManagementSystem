@@ -5,12 +5,16 @@ import java.util.List;
 
 public class Book implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6628836143037312293L;
 	private String isbn;
 	private String title;
 	private List<Author> author;
 	
 	Book(String ISBN, String title){
-		this.isbn = isbn;
+		isbn = ISBN;
 		this.title = title;
 		
 		
@@ -24,7 +28,7 @@ public class Book implements Serializable{
 	public String getTitle(){
 		return title;
 	}
-	public String seTitle(){
+	public void seTitle(String title){
 		this.title = title;
 	}
 	public List<Author> getAuthor(){
