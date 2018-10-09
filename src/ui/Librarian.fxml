@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="487" prefWidth="596" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="190.0" layoutY="346.0" mnemonicParsing="false" text="Checkout" />
+      <Label layoutX="109.0" layoutY="57.0" prefHeight="47.0" prefWidth="378.0" text="Check Out Procedure">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="159.0" prefHeight="27.0" prefWidth="158.0" text="Member Id:">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="230.0" text="Book Id:">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TextField layoutX="224.0" layoutY="158.0" />
+      <TextField layoutX="224.0" layoutY="229.0" />
+   </children>
+</AnchorPane>
