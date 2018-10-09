@@ -1,9 +1,15 @@
 /Person.class
 /Address.class
 /Book.class
+<<<<<<< HEAD
 /Adress.class
 /PersonRole.class
 /Author.class
 /Adminstrator.class
 /LibraryMember.class
 /Librarian.class
+=======
+/BookCopy.class
+/CheckOutEntry.class
+/CheckoutRecord.class
+>>>>>>> origin/book_bookcopy_entry
