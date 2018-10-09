@@ -22,6 +22,6 @@
             <Font name="Berlin Sans FB" size="25.0" />
          </font>
       </Label>
-      <Button fx:id="signin" layoutX="360.0" layoutY="363.0" mnemonicParsing="false" text="Login" />
+      <Button fx:id="signin" layoutX="360.0" layoutY="363.0" mnemonicParsing="false" onAction="#signin" text="Login" />
    </children>
 </AnchorPane>
