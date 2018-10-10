@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 
 import java.awt.event.ActionEvent;
 
+import dataaccess.VisibilityControl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -16,13 +17,13 @@ public class CheckOutController {
 	@FXML
 	private Button submitButton;
 	
-	public void submit(ActionEvent event) {
-		
+	
+
 	}
 
 	
 	
 		
-	}
+	
 
 
