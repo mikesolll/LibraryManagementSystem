@@ -48,34 +48,8 @@ public class LoginController {
 		}else if(!user.getPassword().equals(password.getText())){
 			errorMessage.setText("Username or Password is incorrect");
 		}else {
-			List<PersonRole> personRoles= user.getPerson().getPersonRole();
-			if(personRoles.size()==1){
-				personRole=personRoles.get(0).getPersonRole();
-				if(personRole instanceof Adminstrator) {
-					System.out.println("Adminstrator");
-					Session.currentLogin=personRoles;
-				}
-				else if(personRole instanceof Librarian){
-					Session.currentLogin=personRoles;
-					loginMethod();
-				}
-			} else if(personRoles.size() > 1){
-				boolean isAdmin=false;
-				boolean isLin=false;
-				for (PersonRole p: personRoles){
-					personRole=p.getPersonRole();
-					if(p.getPersonRole() instanceof Adminstrator) {
-						isAdmin=true;
-						continue;
-					}
-					if (personRole instanceof Librarian) isLin=true;
-
-				}
-				if(isAdmin && isLin) {
-					System.out.println("Both");
-					Session.currentLogin =personRoles;
-				}
-			}
+			Session.currentLogin=user.getPerson().getPersonRole();
+			VisibilityControl.navigate("AdminView");
 		}
 
 		   
