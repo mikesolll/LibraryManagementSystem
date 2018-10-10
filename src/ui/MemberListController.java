@@ -3,9 +3,12 @@ package ui;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import business.Person;
+import dataaccess.DataAccessFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -109,7 +112,8 @@ public class MemberListController implements Initializable{
     {
         ObservableList<Person> people = FXCollections.observableArrayList();
         
-        
+        HashMap<String,Person> selected= DataAccessFactory.getAllObject("member");
+        people.add((Person) selected.values());
        // people.add(new Person("Frank","Sinatra",LocalDate.of(1915, Month.DECEMBER, 12), new Image("FrankSinatra.jpg")));
         //people.add(new Person("Rebecca","Fergusson",LocalDate.of(1986, Month.JULY, 21)));
         //people.add(new Person("Mr.","T",LocalDate.of(1952, Month.MAY, 21)));

@@ -40,6 +40,7 @@ public class AdministratorController implements Initializable{
 	}
 
 	public void addMember(ActionEvent event) {
+		VisibilityControl.navigate("AddMemberView");
 
 	}
 	public void editMember(ActionEvent event) {
