@@ -13,27 +13,22 @@
             <Font name="System Bold Italic" size="41.0" />
          </font>
       </Label>
-      <Button fx:id="addMemberButton" layoutX="112.0" layoutY="136.0" mnemonicParsing="false" onAction="#addMember" prefHeight="45.0" prefWidth="183.0" text="Add Member">
+      <Button fx:id="addMemberButton" layoutX="117.0" layoutY="175.0" mnemonicParsing="false" onAction="#addMember" prefHeight="45.0" prefWidth="183.0" text="Add Member">
          <font>
             <Font size="23.0" />
          </font>
       </Button>
-      <Button fx:id="editMemberButton" layoutX="112.0" layoutY="204.0" mnemonicParsing="false" onAction="#editMember" prefHeight="45.0" prefWidth="183.0" text="Edit Member">
+      <Button fx:id="editMemberButton" layoutX="117.0" layoutY="239.0" mnemonicParsing="false" onAction="#editMember" prefHeight="45.0" prefWidth="183.0" text="Edit Member">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="addBookButton" layoutX="112.0" layoutY="266.0" mnemonicParsing="false" onAction="#addBooks" prefHeight="45.0" prefWidth="183.0" text="Add Book">
+      <Button fx:id="addBookButton" layoutX="117.0" layoutY="307.0" mnemonicParsing="false" onAction="#addBooks" prefHeight="45.0" prefWidth="183.0" text="Add Book">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="checkoutBookButton" layoutX="112.0" layoutY="334.0" mnemonicParsing="false" onAction="#checkoutBook" prefHeight="54.0" prefWidth="208.0" text="Checkout Book">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Button>
-      <Button fx:id="checkoutRecordButton" layoutX="112.0" layoutY="405.0" mnemonicParsing="false" onAction="#checkoutRecord" prefHeight="54.0" prefWidth="230.0" text="Checkout Record">
+      <Button fx:id="checkoutBookButton" layoutX="104.0" layoutY="114.0" mnemonicParsing="false" onAction="#checkoutBook" prefHeight="54.0" prefWidth="208.0" text="Checkout Book">
          <font>
             <Font size="25.0" />
          </font>
