@@ -19,7 +19,8 @@ public class LibrarianController {
 	@FXML
 	private Button CheckOutRecordButton;
 	
-	public void checkOutRecord(ActionEvent event){
+	public void checkOutRecord(){
+		VisibilityControl.navigate("CheckOutRecord");
 		
 	}
 
@@ -27,5 +28,7 @@ public class LibrarianController {
 		VisibilityControl.navigate("CheckOut");
 
 	}
+	
+	
 	
 }
