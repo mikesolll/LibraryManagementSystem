@@ -25,7 +25,7 @@ public class main extends Application {
 			e.printStackTrace();
 		}*/
 		//new ExistingUsers();
-		VisibilityControl.navigate("AddBookCopy");
+		VisibilityControl.navigate("Login");
 	}
 	
 
