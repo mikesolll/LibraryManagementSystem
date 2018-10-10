@@ -37,6 +37,8 @@ public class AddBookController {
 	private TextArea shortBioText;
 	@FXML
 	private Button addBookButton;
+
+	@FXML TextField noOfCopy;
 	
 	public void addBook(ActionEvent event) {
 		
@@ -46,6 +48,7 @@ public class AddBookController {
 				shortBioText.getText());
 		
 		AddBookFactory.addBook(ISBNText.getText(), titleText.getText(), Arrays.asList(author));
+		AddBookFactory.addCopy(noOfCopy.getText(),ISBNText.getText());
 		
 	}
 

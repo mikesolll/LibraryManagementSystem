@@ -1,5 +1,6 @@
 package Application;
 
+import dataaccess.ExistingUsers;
 import dataaccess.VisibilityControl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,7 @@ public class main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}*/
+		new ExistingUsers();
 		VisibilityControl.navigate("Login");
 	}
 	
