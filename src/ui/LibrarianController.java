@@ -25,7 +25,7 @@ public class LibrarianController {
 	}
 
 	public void bookCheckOut() {
-		VisibilityControl.navigate("CheckOut");
+		VisibilityControl.navigate("ExampleOfTableView");
 
 	}
 	

@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import business.BookCopy;
 import business.CheckOutEntry;
+import business.LibraryMember;
 import business.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,16 +35,16 @@ import javafx.stage.Stage;
 /**
  *
  */
-public class ExampleOfTableViewController implements Initializable {
+public class CheckOutInController  {
 
     //configure the table
-    @FXML private TableView<Person> tableView;
-    @FXML private TableColumn<Person, String> firstNameColumn;
-    @FXML private TableColumn<Person, String> lastNameColumn;
-    @FXML private TableColumn<Person, String> MemberID;
-    @FXML private TableColumn<BookCopy, String> bookID;
+    @FXML private TableView<CheckOutEntry> tableView;
+   
+    @FXML private TableColumn<CheckOutEntry, String> MemberID;
+    @FXML private TableColumn<CheckOutEntry, String> bookID;
     @FXML private TableColumn<CheckOutEntry, LocalDate> checkOutDate;
-    @FXML private TableColumn<CheckOutEntry, LocalDate> dueDate;    
+    @FXML private TableColumn<CheckOutEntry, LocalDate> dueDate;
+   
     
     //These instance variables are used to create new Person objects
     @FXML private TextField memberIdTextField;
@@ -56,11 +58,21 @@ public class ExampleOfTableViewController implements Initializable {
      * This method will allow the user to double click on a cell and update
      * the first name of the person
      */
-    public void changeFirstNameCellEvent(CellEditEvent edittedCell)
+   /* public void changeFirstNameCellEvent(CellEditEvent edittedCell)
     {
-        Person personSelected =  tableView.getSelectionModel().getSelectedItem();
+        CheckOutEntry personSelected =  tableView.getSelectionModel().getSelectedItem();
         personSelected.setFirstName(edittedCell.getNewValue().toString());
     }
+    /**
+     * This method will allow the user to double click on a cell and update
+     * the first name of the person
+     */
+    /*public void changeLastNameCellEvent(CellEditEvent edittedCell)
+    {
+        Person personSelected =  tableView.getSelectionModel().getSelectedItem();
+        personSelected.setLastName(edittedCell.getNewValue().toString());
+    }
+    
     
     
     /**
@@ -73,16 +85,7 @@ public class ExampleOfTableViewController implements Initializable {
     }
     
     
-       /**
-     * This method will allow the user to double click on a cell and update
-     * the first name of the person
-     */
-    public void changeLastNameCellEvent(CellEditEvent edittedCell)
-    {
-        Person personSelected =  tableView.getSelectionModel().getSelectedItem();
-        personSelected.setLastName(edittedCell.getNewValue().toString());
-    }
-    
+      
     /**
      * When this method is called, it will change the Scene to 
      * a TableView example
@@ -124,30 +127,29 @@ public class ExampleOfTableViewController implements Initializable {
     
   
     
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize() {
         //set up the columns in the table
-        firstNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
-        lastNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
-        birthdayColumn.setCellValueFactory(new PropertyValueFactory<Person, LocalDate>("birthday"));
+       
+        MemberID.setCellValueFactory(new PropertyValueFactory<CheckOutEntry, String>("MemberId"));
+        bookID.setCellValueFactory(new PropertyValueFactory<CheckOutEntry, String>("bookId"));
+        checkOutDate.setCellValueFactory(new PropertyValueFactory<CheckOutEntry, LocalDate>("checkOutDate"));
+        dueDate.setCellValueFactory(new PropertyValueFactory<CheckOutEntry, LocalDate>("dueDate"));
+        
         
         //load dummy data
-        tableView.setItems(getPeople());
+        tableView.setItems(getEntry());
         
         //Update the table to allow for the first and last name fields
         //to be editable
-        tableView.setEditable(true);
-        firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        //tableView.setEditable(true);
+        //firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        //lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         
         //This will allow the table to select multiple rows at once
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         
         //Disable the detailed person view button until a row is selected
-        this.detailedPersonViewButton.setDisable(true);
+      //  this.detailedPersonViewButton.setDisable(true);
     }    
     
     
@@ -156,16 +158,16 @@ public class ExampleOfTableViewController implements Initializable {
      */
     public void deleteButtonPushed()
     {
-        ObservableList<Person> selectedRows, allPeople;
-        allPeople = tableView.getItems();
+        ObservableList<CheckOutEntry> selectedRows, allentries;
+        allentries = tableView.getItems();
         
         //this gives us the rows that were selected
         selectedRows = tableView.getSelectionModel().getSelectedItems();
         
         //loop over the selected rows and remove the Person objects from the table
-        for (Person person: selectedRows)
+        for (CheckOutEntry entry: selectedRows)
         {
-            allPeople.remove(person);
+            allentries.remove(entry);
         }
     }
     
@@ -174,15 +176,14 @@ public class ExampleOfTableViewController implements Initializable {
     /**
      * This method will create a new Person object and add it to the table
      */
-    public void newPersonButtonPushed()
+    public void newCheckOutEntry()
     {
-        Person newPerson = new Person(firstNameTextField.getText(),
-                                      lastNameTextField.getText(),
-                                      birthdayDatePicker.getValue());
+       CheckOutEntry newCheckOutEntry = new CheckOutEntry(memberIdTextField.getText(), bookIdTextField.getText(), LocalDate.now(), LocalDate.now().plusDays(7));
+    		   
         
         //Get all the items from the table as a list, then add the new person to
         //the list
-        tableView.getItems().add(newPerson);
+        tableView.getItems().add(newCheckOutEntry);
     }
     
     
@@ -190,13 +191,15 @@ public class ExampleOfTableViewController implements Initializable {
     /**
      * This method will return an ObservableList of People objects
      */
-    public ObservableList<CheckOutEntry>  getPeople()
+    public ObservableList<CheckOutEntry>  getEntry()
     {
         ObservableList<CheckOutEntry> checkoutentry = FXCollections.observableArrayList();
-        checkoutentry.add(new CheckOutEntry(LocalDate.now(), LocalDate.now(), 0, LocalDate.now(), );
-        people.add(new Person("Rebecca","Fergusson",LocalDate.of(1986, Month.JULY, 21)));
-        people.add(new Person("Mr.","T",LocalDate.of(1952, Month.MAY, 21)));
+        checkoutentry.add(new CheckOutEntry("kabinad","java",LocalDate.now(),LocalDate.now()));
         
-        return people;
+        return checkoutentry;
     }
+
+
+
+	
 }
