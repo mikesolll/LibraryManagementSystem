@@ -15,4 +15,10 @@ public class DataAccessFactory<T> {
         return dataAccess.saveAllObject(tList);
 
     }
+
+
+    public static <T> List<T> getAllObject(String directory){
+        DataAccess<T> dataAccess= new DataAccessSystem<>(directory);
+        return dataAccess.getAllObject();
+    }
 }
