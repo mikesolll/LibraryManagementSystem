@@ -64,7 +64,7 @@ public class AdministratorController implements Initializable{
 		addMemberButton.setVisible(true);
 		editMemberButton.setVisible(true);
 		checkoutBookButton.setVisible(true);
-		checkoutRecordButton.setVisible(true);
+		
 
 
 	}
@@ -72,10 +72,10 @@ public class AdministratorController implements Initializable{
 
 		adminLabel.setText("Administrator");
 		addMemberButton.setVisible(true);
-		addMemberButton.setVisible(true);
+		addBookButton.setVisible(true);
 		editMemberButton.setVisible(true);
 		checkoutBookButton.setVisible(false);
-		checkoutRecordButton.setVisible(false);
+		
 
 
 	}
@@ -83,10 +83,10 @@ public class AdministratorController implements Initializable{
 
 		adminLabel.setText("Librarian");
 		addMemberButton.setVisible(false);
-		addMemberButton.setVisible(false);
+		addBookButton.setVisible(false);
 		editMemberButton.setVisible(false);
 		checkoutBookButton.setVisible(true);
-		checkoutRecordButton.setVisible(true);
+		
 
 
 	}
