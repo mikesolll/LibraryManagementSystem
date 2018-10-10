@@ -24,8 +24,8 @@ public class main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}*/
-		new ExistingUsers();
-		VisibilityControl.navigate("Login");
+		//new ExistingUsers();
+		VisibilityControl.navigate("AddBookCopy");
 	}
 	
 
