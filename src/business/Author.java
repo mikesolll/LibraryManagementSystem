@@ -9,8 +9,9 @@ public class Author extends Person{
 	private String credential;
 	private String shortBio;
 
-	Author(String firstName, String lastName, String phoneNumber,String credentials,String shortBio) {
-		super(firstName, lastName, phoneNumber);
+	Author(String firstName, String lastName, String phoneNumber,
+			String credentials,String shortBio,Address address) {
+		super(firstName, lastName, phoneNumber,address);
 		// TODO Auto-generated constructor stub
 		this.credential=credentials;
 		this.shortBio=shortBio;

@@ -1,5 +1,6 @@
 package ui;
 
+import business.AddPersonFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,6 +35,11 @@ public class AddMemberController {
 	private Button updateMember; // used to edit members
 	
 	public void addMember(ActionEvent event) {
+		
+		AddPersonFactory.newMember(fNameText.getText(), lNameText.getText(), 
+				phoneNumberText.getText(), streetText.getText(),cityText.getText(), 
+				stateText.getText(), zipText.getText(), memberIDText.getText());
+		
 		
 	}
 	public void updateMember(ActionEvent event) {

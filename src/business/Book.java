@@ -13,9 +13,10 @@ public class Book implements Serializable{
 	private String title;
 	private List<Author> author;
 	
-	Book(String ISBN, String title){
+	Book(String ISBN, String title,List<Author> author){
 		isbn = ISBN;
 		this.title = title;
+		this.author=author;
 		
 		
 	}

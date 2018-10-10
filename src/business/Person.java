@@ -16,12 +16,13 @@ public class Person implements Serializable {
 	private Address address;
 	private List<PersonRole> personRole;
 	//Package level
-	 Person(String firstName, String lastName,String phoneNumber) {
+	 Person(String firstName, String lastName,String phoneNumber,Address address) {
 		// TODO Auto-generated constructor stub
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.phoneNumber=phoneNumber;
 		personRole= new ArrayList<>();
+		this.address=address;
 		
 	}
 	public String getFirstName() {
