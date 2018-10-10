@@ -33,6 +33,7 @@ public class DataAccessSystem<T> implements DataAccess<T> {
     public boolean saveAllObject(List<T>  tList){
 
         try{
+        	lists=getAllObject();
             lists.addAll(tList);
             fileOutputStream= new FileOutputStream(OUTPUT_DIR);
             outputStream= new ObjectOutputStream(fileOutputStream);

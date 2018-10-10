@@ -11,3 +11,7 @@
 /PersonRole.class
 /User.class
 /AddNewUserFactory.class
+/AddMemberFactory.class
+/AddAddressFactory.class
+/AddPersonFactory.class
+/AddBookFactory.class
