@@ -30,23 +30,4 @@ public class VisibilityControl {
             e.printStackTrace();
         }
     }
-
-    public static void navigateHome(){
-        boolean isAdmin=false;
-        boolean isLib=false;
-        List<PersonRole>  personRoles= Session.currentLogin;
-        for (PersonRole personRole: personRoles){
-            if(personRoles.size()>1){
-                if(personRole instanceof Adminstrator) isAdmin=true;
-                else if(personRole instanceof Librarian) isLib=true;
-            }
-            else if(personRoles.size() == 1){
-                if(personRole instanceof  Adminstrator);
-                else  if(personRole instanceof Librarian);
-            }
-        }
-        if(isAdmin && isLib){
-
-        }
-    }
 }
