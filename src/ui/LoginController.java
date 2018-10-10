@@ -8,6 +8,8 @@ import business.Librarian;
 import business.PersonRole;
 import business.User;
 import dataaccess.DataAccessFactory;
+import dataaccess.Session;
+import dataaccess.VisibilityControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +36,7 @@ public class LoginController {
 	public void signin(ActionEvent event){
 		List<User> users= DataAccessFactory.getAllObject(User.class.getSimpleName());
 		User user= null;
+		PersonRole personRole;
 		for (User u: users){
 			if (u.getUsername().equals(username.getText())){
 				user=u;
@@ -47,15 +50,18 @@ public class LoginController {
 		}else {
 			List<PersonRole> personRoles= user.getPerson().getPersonRole();
 			if(personRoles.size()==1){
-				PersonRole personRole=personRoles.get(0).getPersonRole();
+				personRole=personRoles.get(0).getPersonRole();
 				if(personRole instanceof Adminstrator) {
 					System.out.println("Adminstrator");
+					Session.currentLogin=personRoles;
 				}
-				else if(personRole instanceof Librarian)loginMethod();
+				else if(personRole instanceof Librarian){
+					Session.currentLogin=personRoles;
+					loginMethod();
+				}
 			} else if(personRoles.size() > 1){
 				boolean isAdmin=false;
 				boolean isLin=false;
-				PersonRole personRole;
 				for (PersonRole p: personRoles){
 					personRole=p.getPersonRole();
 					if(p.getPersonRole() instanceof Adminstrator) {
@@ -65,20 +71,24 @@ public class LoginController {
 					if (personRole instanceof Librarian) isLin=true;
 
 				}
-				if(isAdmin && isLin) System.out.println("Both");
+				if(isAdmin && isLin) {
+					System.out.println("Both");
+					Session.currentLogin =personRoles;
+				}
 			}
 		}
 
 		   
 		}
 	public void loginMethod(){
-		 try {
+		VisibilityControl.navigate("Librarian");
+		 /*try {
 		        FXMLLoader fxmlLoader = new FXMLLoader();
 		        fxmlLoader.setLocation(getClass().getResource("/ui/Librarian.fxml"));
-		        /* 
+		        *//*
 		         * if "fx:controller" is not set in fxml
 		         * fxmlLoader.setController(NewWindowController);
-		         */
+		         *//*
 		        Scene scene = new Scene(fxmlLoader.load(), 487, 596);
 		        Stage stage = new Stage();
 		        stage.setTitle("New Window");
@@ -87,7 +97,7 @@ public class LoginController {
 		    } catch (IOException e) {
 		       // Logger logger = Logger.getLogger(getClass().getName());
 		        //logger.log(Level.SEVERE, "Failed to create new Window.", e);
-		    }
+		    }*/
 		
 	}
 	}
