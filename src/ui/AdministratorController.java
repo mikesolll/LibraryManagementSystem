@@ -54,6 +54,7 @@ public class AdministratorController implements Initializable{
 
 	}
 	public void checkoutBook(ActionEvent event) {
+		VisibilityControl.navigate("CheckOutIn");
 
 	}
 	public void checkoutRecord(ActionEvent event) {

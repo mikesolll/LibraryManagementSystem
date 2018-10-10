@@ -3,33 +3,61 @@ package business;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javafx.beans.property.SimpleStringProperty;
+
 
 public class CheckOutEntry implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 414058464577082661L;
-	private LocalDate dateIssued;
+	private LocalDate checkOutDate;
 	private LocalDate dueDate;
 	private double fine;
 	private LocalDate datePaid;
 	private BookCopy book;
+	private SimpleStringProperty memberId;
+	private SimpleStringProperty bookId;
 
-	CheckOutEntry(LocalDate dateIssued, LocalDate dueDate, double fine, LocalDate datePaid, BookCopy book) {
-		
-		this.dateIssued = dateIssued;
+	public CheckOutEntry(String memberId, String bookId,LocalDate checkOutDate, LocalDate dueDate, LocalDate datePaid, BookCopy book) {
+		this.bookId = new SimpleStringProperty(bookId);
+		this.memberId = new SimpleStringProperty (memberId);
+		this.checkOutDate = checkOutDate;
 		this.dueDate = dueDate;
-		this.fine = fine;
+		//this.fine = fine;
 		this.datePaid = datePaid;
 		this.book = book;
 	}
 
-	public LocalDate getDateIssued() {
-		return dateIssued;
+	public CheckOutEntry(String memberId, String bookId, LocalDate checkOutDate, LocalDate dueDate) {
+		this.bookId = new SimpleStringProperty(bookId);
+		this.memberId = new SimpleStringProperty (memberId);
+		this.checkOutDate = checkOutDate;
+		this.dueDate = dueDate;
 	}
 
-	public void setDateIssued(LocalDate dateIssued) {
-		this.dateIssued = dateIssued;
+	public String getMemberId() {
+		return memberId.get();
+	}
+
+	public void setMemberId(SimpleStringProperty memberId) {
+		this.memberId = memberId;
+	}
+
+	public String getBookId() {
+		return bookId.get();
+	}
+
+	public void setBookId(SimpleStringProperty bookId) {
+		this.bookId = bookId;
+	}
+
+	public LocalDate getCheckOutDate() {
+		return checkOutDate;
+	}
+
+	public void setCheckOutdate(LocalDate checkOutDate) {
+		this.checkOutDate = checkOutDate;
 	}
 
 	public LocalDate getDueDate() {
@@ -66,7 +94,7 @@ public class CheckOutEntry implements Serializable {
 
 	@Override
 	public String toString() {
-		return "CheckOutEntry [dateIssued=" + dateIssued + ", dueDate=" + dueDate + ", fine=" + fine + ", datePaid="
+		return "CheckOutEntry [dateIssued=" + checkOutDate + ", dueDate=" + dueDate + ", fine=" + fine + ", datePaid="
 				+ datePaid + ", book=" + book + "]";
 	}
 
