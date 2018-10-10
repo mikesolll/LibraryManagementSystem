@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="531.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AdminstratorController">
+   <children>
+      <Label fx:id="adminLabel" layoutX="91.0" layoutY="45.0" prefHeight="39.0" prefWidth="344.0" text="Administrator" textAlignment="CENTER" textFill="#00000091">
+         <font>
+            <Font name="System Bold Italic" size="41.0" />
+         </font>
+      </Label>
+      <Button fx:id="addMemberButton" layoutX="112.0" layoutY="136.0" mnemonicParsing="false" onAction="#addMember" prefHeight="45.0" prefWidth="183.0" text="Add Member">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="editMemberButton" layoutX="112.0" layoutY="204.0" mnemonicParsing="false" onAction="#editMember" prefHeight="45.0" prefWidth="183.0" text="Edit Member">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="addBookButton" layoutX="112.0" layoutY="266.0" mnemonicParsing="false" onAction="#addBooks" prefHeight="45.0" prefWidth="183.0" text="Add Book">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="checkoutBookButton" layoutX="112.0" layoutY="334.0" mnemonicParsing="false" onAction="#checkoutBook" prefHeight="54.0" prefWidth="208.0" text="Checkout Book">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="checkoutRecordButton" layoutX="112.0" layoutY="405.0" mnemonicParsing="false" onAction="#checkoutRecord" prefHeight="54.0" prefWidth="230.0" text="Checkout Record">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
