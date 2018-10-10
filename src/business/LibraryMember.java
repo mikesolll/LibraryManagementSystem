@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class LibraryMember extends PersonRole implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7159469442297205352L;
 	private String memberID;
 	private CheckoutRecord checkoutPaper;
 	public LibraryMember(String memberID) {
