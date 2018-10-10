@@ -1,14 +1,15 @@
 package dataaccess;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface DataAccess<T> {
 
-    boolean saveObject(T t);
+    boolean saveObject(String key,T t);
 
-    List<T> getAllObject();
+    HashMap<String,T> getAllObject();
 
-    boolean saveAllObject(List<T> t);
+    boolean saveAllObject(HashMap<String,T> t);
 
 }

@@ -40,7 +40,7 @@ public class AddNewUserFactory {
         users.add(user1);
         users.add(user2);
         users.add(user3);
-        DataAccessFactory.saveAllData(User.class.getSimpleName(),users);
+      //  DataAccessFactory.saveAllData(User.class.getSimpleName(),users);
 
     }
 }
