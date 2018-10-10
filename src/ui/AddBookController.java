@@ -47,7 +47,7 @@ public class AddBookController {
 				stateText.getText(), zipText.getText(), credentialText.getText(), 
 				shortBioText.getText());
 		
-		AddBookFactory.addBook(ISBNText.getText(), titleText.getText(), Arrays.asList(author));
+		AddBookFactory.addBook(ISBNText.getText(), titleText.getText(),Integer.parseInt(noOfCopy.getText()), Arrays.asList(author));
 		AddBookFactory.addCopy(noOfCopy.getText(),ISBNText.getText());
 		
 	}

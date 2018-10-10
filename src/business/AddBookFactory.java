@@ -5,6 +5,7 @@ import java.util.List;
 
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFactory;
+import util.Storage;
 
 public class AddBookFactory {
 	
@@ -12,11 +13,11 @@ public class AddBookFactory {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static boolean addBook(String ISBN, String title,List<Author> author) {
+	public static boolean addBook(String ISBN, String title,Integer NoOfAvailableCopy,List<Author> author) {
 		
-		Book book= new Book(ISBN,title,author);
+		Book book= new Book(ISBN,title,NoOfAvailableCopy,author);
 		
-		return DataAccessFactory.saveData(book.getClass().getSimpleName(),book.getIsbn(), book);
+		return DataAccessFactory.saveData(Storage.BOOK.getVal(),book.getIsbn(), book);
 		
 		
 	}
@@ -30,8 +31,19 @@ public class AddBookFactory {
 			copies.put(ISBN+"_"+i,copyEntity);
 		}
 
-		return DataAccessFactory.saveAllData("bookCopy",copies);
+		return DataAccessFactory.saveAllData(Storage.BOOKCOPY.getVal(),copies);
 
+	}
+
+	public static boolean addCopy(Integer copyNo,String ISBN){
+		BookCopyEntity copyEntity;
+		HashMap<String,Book> books = DataAccessFactory.getAllObject(Storage.BOOKCOPY.getVal());
+		Book book= books.get(ISBN);
+		if(book != null){
+			copyEntity= new BookCopyEntity(ISBN+"_"+copyNo,ISBN,true);
+		return 	DataAccessFactory.saveData(Storage.BOOKCOPY.getVal(),ISBN+"_"+copyNo,copyEntity);
+		}
+		return false;
 	}
 
 }

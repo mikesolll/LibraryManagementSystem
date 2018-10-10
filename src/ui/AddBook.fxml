@@ -89,7 +89,7 @@
          </font>
       </Label>
       <TextField fx:id="credentialText" layoutX="261.0" layoutY="529.0" />
-      <TextField layoutX="185.0" layoutY="193.0" />
+      <TextField fx:id="noOfCopy" layoutX="185.0" layoutY="193.0" />
       <Label layoutX="52.0" layoutY="197.0" text="No of Copes">
          <font>
             <Font name="System Bold" size="20.0" />

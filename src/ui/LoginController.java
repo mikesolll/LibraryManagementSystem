@@ -9,9 +9,6 @@ import java.util.HashMap;
 
 import java.util.List;
 import java.util.Map;
-
-import business.Adminstrator;
-import business.Librarian;
 import business.PersonRole;
 import business.User;
 import dataaccess.DataAccessFactory;
@@ -19,14 +16,10 @@ import dataaccess.Session;
 import dataaccess.VisibilityControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 
 public class LoginController {

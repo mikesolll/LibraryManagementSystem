@@ -1,11 +1,14 @@
 package ui;
 
 import business.AddPersonFactory;
+import business.Person;
+import dataaccess.DataAccessFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import util.Storage;
 
 public class AddMemberController {
 	
@@ -36,11 +39,11 @@ public class AddMemberController {
 	
 	public void addMember(ActionEvent event) {
 		
-		AddPersonFactory.newMember(fNameText.getText(), lNameText.getText(), 
+		Person person=AddPersonFactory.newMember(fNameText.getText(), lNameText.getText(),
 				phoneNumberText.getText(), streetText.getText(),cityText.getText(), 
 				stateText.getText(), zipText.getText(), memberIDText.getText());
-		
-		
+
+		DataAccessFactory.saveData(Storage.MEMBER.getVal(),memberIDText.getText(),person);
 	}
 	public void updateMember(ActionEvent event) {
 
