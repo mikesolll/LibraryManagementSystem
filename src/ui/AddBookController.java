@@ -1,5 +1,10 @@
 package ui;
 
+import java.util.Arrays;
+
+import business.AddBookFactory;
+import business.AddPersonFactory;
+import business.Author;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -32,8 +37,18 @@ public class AddBookController {
 	private TextArea shortBioText;
 	@FXML
 	private Button addBookButton;
+
+	@FXML TextField noOfCopy;
 	
 	public void addBook(ActionEvent event) {
+		
+		Author author= AddPersonFactory.newAuthor(fNameText.getText(), lNameText.getText(), 
+				phoneNumberText.getText(), streetText.getText(), cityText.getText(), 
+				stateText.getText(), zipText.getText(), credentialText.getText(), 
+				shortBioText.getText());
+		
+		AddBookFactory.addBook(ISBNText.getText(), titleText.getText(), Arrays.asList(author));
+		AddBookFactory.addCopy(noOfCopy.getText(),ISBNText.getText());
 		
 	}
 

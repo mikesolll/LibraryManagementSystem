@@ -1,7 +1,9 @@
 package ui;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import business.Adminstrator;
 import business.Librarian;
@@ -34,15 +36,10 @@ public class LoginController {
 	private Label errorMessage;
 	
 	public void signin(ActionEvent event){
-		List<User> users= DataAccessFactory.getAllObject(User.class.getSimpleName());
+		HashMap<String,User> users= DataAccessFactory.getAllObject(User.class.getSimpleName());
 		User user= null;
 		PersonRole personRole;
-		for (User u: users){
-			if (u.getUsername().equals(username.getText())){
-				user=u;
-				break;
-			}
-		}
+		user=users.get(username.getText());
 		if(user==null){
 			errorMessage.setText("Username or Password is incorrect");
 		}else if(!user.getPassword().equals(password.getText())){
