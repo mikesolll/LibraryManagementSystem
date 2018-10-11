@@ -27,7 +27,7 @@ public class AddBookFactory {
 		Integer noOfCopy=Integer.parseInt(NoOfCopy);
 		HashMap<String,BookCopyEntity> copies= new HashMap<>();
 		for (Integer i=1; i<=noOfCopy; i++){
-			copyEntity=new BookCopyEntity(i.toString(),ISBN,true);
+			copyEntity=new BookCopyEntity(ISBN+"_"+i.toString(),ISBN,true);
 			copies.put(ISBN+"_"+i,copyEntity);
 		}
 

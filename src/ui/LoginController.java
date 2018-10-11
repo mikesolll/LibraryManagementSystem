@@ -40,35 +40,13 @@ public class LoginController {
 		PersonRole personRole;
 		user=users.get(username.getText());
 		if(user==null){
-			errorMessage.setText("Username or Password is incorrect");
+			errorMessage.setText("Username or Password is Incorrect!!!");
 		}else if(!user.getPassword().equals(password.getText())){
-			errorMessage.setText("Username or Password is incorrect");
+			errorMessage.setText("Username or Password is Incorrect!!!");
 		}else {
 			Session.currentLogin=user.getPerson().getPersonRole();
 			VisibilityControl.navigate("AdminView");
 		}
-
-		   
 		}
-	public void loginMethod(){
-		VisibilityControl.navigate("Librarian");
-		 /*try {
-		        FXMLLoader fxmlLoader = new FXMLLoader();
-		        fxmlLoader.setLocation(getClass().getResource("/ui/Librarian.fxml"));
-		        *//*
-		         * if "fx:controller" is not set in fxml
-		         * fxmlLoader.setController(NewWindowController);
-		         *//*
-		        Scene scene = new Scene(fxmlLoader.load(), 487, 596);
-		        Stage stage = new Stage();
-		        stage.setTitle("New Window");
-		        stage.setScene(scene);
-		        stage.show();
-		    } catch (IOException e) {
-		       // Logger logger = Logger.getLogger(getClass().getName());
-		        //logger.log(Level.SEVERE, "Failed to create new Window.", e);
-		    }*/
-		
-	}
 	}
 	
