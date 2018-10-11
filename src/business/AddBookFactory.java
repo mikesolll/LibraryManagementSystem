@@ -37,10 +37,14 @@ public class AddBookFactory {
 
 	public static boolean addCopy(Integer copyNo,String ISBN){
 		BookCopyEntity copyEntity;
-		HashMap<String,Book> books = DataAccessFactory.getAllObject(Storage.BOOKCOPY.getVal());
+		HashMap<String,Book> books = DataAccessFactory.getAllObject(Storage.BOOK.getVal());
 		Book book= books.get(ISBN);
 		if(book != null){
+			book.setNoOfAvailableCopy(book.getNoOfAvailableCopy()+1);
 			copyEntity= new BookCopyEntity(ISBN+"_"+copyNo,ISBN,true);
+			books.remove(ISBN);
+			books.put(ISBN,book);
+			DataAccessFactory.replaceOnject(Storage.BOOK.getVal(),books);
 		return 	DataAccessFactory.saveData(Storage.BOOKCOPY.getVal(),ISBN+"_"+copyNo,copyEntity);
 		}
 		return false;

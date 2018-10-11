@@ -32,22 +32,10 @@ public class DataAccessSystem<T> implements DataAccess<T> {
     }
 
     public boolean saveAllObject(HashMap<String,T>  tList){
-        try{
-        	lists=getAllObject();
-            lists.putAll(tList);
-            fileOutputStream= new FileOutputStream(OUTPUT_DIR);
-            outputStream= new ObjectOutputStream(fileOutputStream);
-            outputStream.writeObject(lists);
-            outputStream.close();
-            return true;
 
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-            return false;
-        }catch (IOException e){
-            e.printStackTrace();
-            return false;
-        }
+        lists=getAllObject();
+        lists.putAll(tList);
+        return replaceObject(tList);
 
 
     }
@@ -67,6 +55,26 @@ public class DataAccessSystem<T> implements DataAccess<T> {
                }
 
                return values;
+
+    }
+
+    @Override
+    public boolean replaceObject(HashMap<String, T> t) {
+        try{
+            lists.putAll(t);
+            fileOutputStream= new FileOutputStream(OUTPUT_DIR);
+            outputStream= new ObjectOutputStream(fileOutputStream);
+            outputStream.writeObject(lists);
+            outputStream.close();
+            return true;
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+            return false;
+        }catch (IOException e){
+            e.printStackTrace();
+            return false;
+        }
 
     }
 }
