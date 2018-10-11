@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/util/Storage.class" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/util/Storage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/docs/member.txt" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/docs/member.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/ui/.gitignore" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/ui/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/ui/AddMemberView.fxml" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/ui/AddMemberView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/ui/CheckOutIn.fxml" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/ui/CheckOutIn.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LibraryManagementSystem/util/.gitignore" afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/util/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/CheckOutInController.java" afterPath="$PROJECT_DIR$/src/ui/CheckOutInController.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -123,16 +117,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AddBookCopyController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/AddBookCopyController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,11 +133,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="book.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="book.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/docs/book.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
               <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckOutController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/CheckOutController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckOutInController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ui/CheckOutInController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -248,6 +252,7 @@
         <option value="$PROJECT_DIR$/src/ui/AddBookController.java" />
         <option value="$PROJECT_DIR$/src/ui/AddBookCopy.fxml" />
         <option value="$PROJECT_DIR$/src/ui/AddBookCopyController.java" />
+        <option value="$PROJECT_DIR$/src/ui/CheckOutInController.java" />
       </list>
     </option>
   </component>
@@ -547,12 +552,12 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1539040846231" duration="67156000" />
+      <workItem from="1539040846231" duration="67443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68458000" />
+    <option name="totallyTimeSpent" value="68745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -647,14 +652,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/jdk.hotspot.agent/sun/jvm/hotspot/utilities/ObjectReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8881">
-          <caret line="78" column="40" lean-forward="true" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/io/ObjectInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4947">
@@ -771,14 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/CheckOutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1108,6 +1097,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/CheckOutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/CheckOutInController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
           <folding />
         </state>
       </provider>
