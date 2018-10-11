@@ -29,6 +29,8 @@ public class AdministratorController implements Initializable{
 	private Button checkoutBookButton;
 	@FXML
 	private Button checkoutRecordButton;
+	@FXML
+	private Button addBookCopy;
 
 	@FXML
 	private Button logout;
@@ -51,7 +53,7 @@ public class AdministratorController implements Initializable{
 
 	}
 	public void addBooks(ActionEvent event) {
-
+		VisibilityControl.navigate("AddBook");
 	}
 	public void checkoutBook(ActionEvent event) {
 		VisibilityControl.navigate("CheckOutIn");
@@ -59,6 +61,9 @@ public class AdministratorController implements Initializable{
 	}
 	public void checkoutRecord(ActionEvent event) {
 
+	}
+	public void addBookCopy(){
+	VisibilityControl.navigate("AddBookCopy");
 	}
 	public void logout(ActionEvent event){
 		VisibilityControl.navigate("login");
@@ -70,6 +75,7 @@ public class AdministratorController implements Initializable{
 		addMemberButton.setVisible(true);
 		editMemberButton.setVisible(true);
 		checkoutBookButton.setVisible(true);
+		addBookCopy.setVisible(true);
 		
 
 
@@ -81,6 +87,7 @@ public class AdministratorController implements Initializable{
 		addBookButton.setVisible(true);
 		editMemberButton.setVisible(true);
 		checkoutBookButton.setVisible(false);
+		addBookCopy.setVisible(true);
 		
 
 
@@ -92,10 +99,12 @@ public class AdministratorController implements Initializable{
 		addBookButton.setVisible(false);
 		editMemberButton.setVisible(false);
 		checkoutBookButton.setVisible(true);
+		addBookCopy.setVisible(false);
 		
 
 
 	}
+
 
 	public  void navigateHome(){
 		boolean isAdmin=false;

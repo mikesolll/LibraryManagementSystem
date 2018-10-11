@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LibrarianController">
+   <children>
+      <Label layoutX="42.0" layoutY="71.0" prefHeight="56.0" prefWidth="252.0" text="WelCome Back,">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Button fx:id="bookCheckOutButton" layoutX="93.0" layoutY="240.0" mnemonicParsing="false" onAction="#bookCheckOut" text="Book Check out" />
+      <Button fx:id="CheckOutRecordButton" layoutX="93.0" layoutY="311.0" mnemonicParsing="false" text="Open Check Out record" />
+      <Label layoutX="44.0" layoutY="154.0" text="Please Choose from the Menu">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="314.0" layoutY="66.0">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

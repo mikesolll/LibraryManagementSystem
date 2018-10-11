@@ -5,6 +5,7 @@ import business.Book;
 import business.BookCopyEntity;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFactory;
+import dataaccess.VisibilityControl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -33,8 +34,8 @@ public class AddBookCopyController implements Initializable{
        boolean isAdded= AddBookFactory.addCopy(Integer.parseInt(CopyNo.getText()),book.getIsbn());
        if(isAdded){
            clearValue();
-           ShowMessage.success("The copy is Added successfully");
-       }else ShowMessage.error("The is error while Adding the book");
+           ShowMessage.success("Book Copy","The copy is Added successfully");
+       }else ShowMessage.error("Book Copy","The is error while Adding the book");
     }
 
     @Override
@@ -47,6 +48,10 @@ public class AddBookCopyController implements Initializable{
 
     private void clearValue(){
        CopyNo.setText("");
+    }
+
+    public void goHome(){
+        VisibilityControl.navigate("AdminView");
     }
 
 

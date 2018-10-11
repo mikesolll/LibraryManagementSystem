@@ -5,6 +5,7 @@ import java.util.Arrays;
 import business.AddBookFactory;
 import business.AddPersonFactory;
 import business.Author;
+import dataaccess.VisibilityControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -52,10 +53,13 @@ public class AddBookController {
 		boolean isCopyAdded=AddBookFactory.addCopy(noOfCopy.getText(),ISBNText.getText());
 
 		if(isBookAdded && isCopyAdded){
-			ShowMessage.success("Book and Book copy are Added Successfully");
+			ShowMessage.success("Book and BookCopy ","Book and Book copy are Added Successfully");
 			clearValue();
-		}else ShowMessage.error("There is error while added ");
+		}else ShowMessage.error("Book and BookCopy ","There is error while added ");
 		
+	}
+	public void goHome(){
+		VisibilityControl.navigate("AdminView");
 	}
 
 	public void clearValue() {
