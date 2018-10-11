@@ -16,18 +16,22 @@ public class VisibilityControl {
     private static Stage currentStage=null;
 
 
-    public static void navigate(String source){
+    public static FXMLLoader navigate(String source){
         try{
-            Parent root= FXMLLoader.load(new VisibilityControl().getClass().getResource("/ui/"+source+".fxml"));
+        	FXMLLoader loader = new FXMLLoader();
+        	loader.setLocation(new VisibilityControl().getClass().getResource("/ui/"+source+".fxml"));
+            Parent root=loader.load();
             Scene scene= new Scene(root);
             Stage stage= new Stage();
             stage.setScene(scene);
             stage.show();
             if(currentStage !=null) currentStage.hide();
             currentStage=stage;
+            return loader;
 
         }catch (IOException e){
             e.printStackTrace();
         }
+        return null;
     }
 }
