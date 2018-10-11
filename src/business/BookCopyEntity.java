@@ -11,6 +11,7 @@ public class BookCopyEntity implements Serializable {
 
         this.copyNo = copyNo;
         this.ISBN = ISBN;
+        this.availablity=availablity;
     }
 
     public String getCopyNo() {

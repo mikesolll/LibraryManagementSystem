@@ -23,7 +23,10 @@
          </font>
       </Label>
       <Button fx:id="signin" layoutX="273.0" layoutY="343.0" mnemonicParsing="false" onAction="#signin" prefHeight="39.0" prefWidth="137.0" text="Login" />
-      <Label fx:id="errorMessage" layoutX="74.0" layoutY="415.0" textFill="#f50606" />
+      <Label fx:id="errorMessage" layoutX="74.0" layoutY="415.0" textFill="#f50606">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Label>
 
    </children>
 </AnchorPane>

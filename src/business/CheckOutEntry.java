@@ -46,6 +46,14 @@ public class CheckOutEntry implements Serializable {
 		this.dueDate = dueDate;
 	}
 
+	public CheckOutEntry(String memberId, String bookId, LocalDate checkOutDate, LocalDate dueDate, String title) {
+		this.bookId = bookId;
+		this.memberId =  memberId;
+		this.checkOutDate = checkOutDate;
+		this.dueDate = dueDate;
+		bookTitle = title;
+	}
+
 	public String getMemberId() {
 		return memberId;
 	}
@@ -108,12 +116,13 @@ public class CheckOutEntry implements Serializable {
 				+ datePaid + ", book=" + book + "]";
 	}
 	public ObservableValue<String> memberIdProperty() {
-		// TODO Auto-generated method stub
 		return new SimpleStringProperty(memberId);
 	}
 	public ObservableValue<String> bookIdProperty() {
-		// TODO Auto-generated method stub
 		return new SimpleStringProperty(bookId);
-	} 
+	}
+	public ObservableValue<String> titleIdPropery(){
+		return new SimpleStringProperty(bookTitle);
+	}
 
 }
