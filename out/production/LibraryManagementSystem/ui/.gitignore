@@ -1,19 +1,20 @@
-/Administrator.class
-<<<<<<< HEAD
-/AdministratorController.class
-/Main.class
-/AddMemberController.class
-/EditMemberController.class
-/AddBookController.class
-=======
-/LoginController.class
-/LibrarianController.class
-/CheckOutController.class
->>>>>>> 5bdd37038f2902c3c96314f0b1f4c66517c668e7
-/MemberListController.class
 /MemberListController$1.class
 /MemberListController$2.class
 /AddBookCopyController.class
+<<<<<<< HEAD
+/AddMemberController.class
+/AdministratorController.class
+/CheckOutController.class
+/CheckOutInController.class
+/CheckOutRecordController.class
+/LibrarianController.class
+/LoginController.class
+/MemberListController.class
+/CheckOutInController$1.class
+/CheckOutInController$2.class
+=======
 /CheckOutInController.class
 /CheckOutRecordController.class
 /UpdateMember.class
+>>>>>>> aa6578bcaf2cb600e17d25d8c3c6ed54c1bb58de
+/AddBookController.class
