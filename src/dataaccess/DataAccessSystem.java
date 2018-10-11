@@ -18,7 +18,7 @@ public class DataAccessSystem<T> implements DataAccess<T> {
 
     DataAccessSystem(String directory){
         OUTPUT_DIR=System.getProperty("user.dir")
-                +"\\src\\docs\\"+directory+".txt" ;
+                +"\\docs\\"+directory+".txt" ;
     }
 
 

@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LoginController">
    <children>
       <TextField fx:id="username" layoutX="186.0" layoutY="184.0" />
-      <PasswordField fx:id="password" layoutX="186.0" layoutY="265.0" />
+      <PasswordField fx:id="password" layoutX="186.0" layoutY="265.0" onAction="#signin" />
       <Label layoutX="74.0" layoutY="190.0" text="User Name" />
       <Label layoutX="81.0" layoutY="271.0" text="Password" />
       <Label layoutX="74.0" layoutY="32.0" prefHeight="38.0" prefWidth="366.0" text="LIbrary Management System" textFill="#2f0aeb">
