@@ -3,9 +3,13 @@ package ui;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import business.Person;
+import dataaccess.DataAccessFactory;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -14,14 +18,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
+import javafx.util.Callback;
 
 
 
 
-public class MemberListController implements Initializable{
+public class MemberListController{
 	//configure the table
 	@FXML
 	private TableView<Person> personTable;
@@ -45,13 +51,49 @@ public class MemberListController implements Initializable{
 	@FXML
 	private Label stateLabel;
 	
-	MemberListController(){
+	public MemberListController(){
 		
-		showPersonDetails(null);
+		//showPersonDetails(null);
+		//personTable.setItems(getPeople());
 	}
 	public void handleEditPerson() {
 		
 		
+		
+	}
+	@FXML
+	private void initialize() {
+		// Initialize the person table with the two columns.
+//		firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+//		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+
+		preJava8();
+		// Clear person details.
+		personTable.setItems(getPeople());
+		//showPersonDetails(null);
+
+		// Listen for selection changes and show the person details when
+		// changed.
+		personTable.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+
+	}
+	private void preJava8() {
+		firstNameColumn.setCellValueFactory(new Callback<CellDataFeatures<Person, String>, ObservableValue<String>>() {
+
+			@Override
+			public ObservableValue<String> call(CellDataFeatures<Person, String> param) {
+				return param.getValue().firstNameProperty();
+			}
+		});
+
+		lastNameColumn.setCellValueFactory(new Callback<CellDataFeatures<Person, String>, ObservableValue<String>>() {
+
+			@Override
+			public ObservableValue<String> call(CellDataFeatures<Person, String> param) {
+				return param.getValue().lastNameProperty();
+			}
+		});
 	}
 	private void showPersonDetails(Person person) {
 		if (person != null) {
@@ -83,8 +125,8 @@ public class MemberListController implements Initializable{
 	/**
      * Initializes the controller class.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+/*
+    public void initialize() {
         //set up the columns in the table
         firstNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
@@ -95,21 +137,23 @@ public class MemberListController implements Initializable{
         
         //Update the table to allow for the first and last name fields
         //to be editable
-        personTable.setEditable(true);
-        firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        //personTable.setEditable(true);
+        //firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        //lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         
         //This will allow the table to select multiple rows at once
-        personTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+       // personTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         
         //Disable the detailed person view button until a row is selected
         //this.detailedPersonViewButton.setDisable(true);
-    }
+    }*/
     public ObservableList<Person>  getPeople()
     {
         ObservableList<Person> people = FXCollections.observableArrayList();
         
-        
+        HashMap<String,Person> selected= DataAccessFactory.getAllObject("member");
+        for(Person m:selected.values())
+        people.add(m);
        // people.add(new Person("Frank","Sinatra",LocalDate.of(1915, Month.DECEMBER, 12), new Image("FrankSinatra.jpg")));
         //people.add(new Person("Rebecca","Fergusson",LocalDate.of(1986, Month.JULY, 21)));
         //people.add(new Person("Mr.","T",LocalDate.of(1952, Month.MAY, 21)));

@@ -40,15 +40,21 @@ public class AdministratorController implements Initializable{
 	}
 
 	public void addMember(ActionEvent event) {
+		
+		VisibilityControl.navigate("AddMemberView");
 
 	}
+
 	public void editMember(ActionEvent event) {
+		
+		VisibilityControl.navigate("memberList");
 
 	}
 	public void addBooks(ActionEvent event) {
 
 	}
 	public void checkoutBook(ActionEvent event) {
+		VisibilityControl.navigate("CheckOutIn");
 
 	}
 	public void checkoutRecord(ActionEvent event) {

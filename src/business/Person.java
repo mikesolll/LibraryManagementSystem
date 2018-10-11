@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+
 public class Person implements Serializable {
 	
 	/**
@@ -90,5 +93,13 @@ public class Person implements Serializable {
 			return false;
 		return true;
 	}
+	public ObservableValue<String> firstNameProperty() {
+		// TODO Auto-generated method stub
+		return new SimpleStringProperty(firstName);
+	}
+	public ObservableValue<String> lastNameProperty() {
+		// TODO Auto-generated method stub
+		return new SimpleStringProperty(lastName);
+	} 
 	
 }

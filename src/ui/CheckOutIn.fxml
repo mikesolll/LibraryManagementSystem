@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.CheckOutInController">
+   <children>
+      <Button layoutX="551.0" layoutY="516.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="211.0" text="Go Back to GUI Objects View" />
+      <VBox layoutY="6.0" prefHeight="404.0" prefWidth="800.0" spacing="10.0">
+         <children>
+            <Label text="Check In/OUt">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableView" onMouseClicked="#userClickedOnTable" prefHeight="201.0" prefWidth="800.0">
+              <columns>
+                  <TableColumn fx:id="MemberID" prefWidth="140.0" text="Member ID" />
+                  <TableColumn fx:id="bookID" prefWidth="117.0" text="Book ID" />
+                  <TableColumn fx:id="dueDate" prefWidth="127.0" text="Due Date" />
+                  <TableColumn fx:id="checkOutDate" prefWidth="177.0" text="Check Out Date" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="memberIdTextField" prefWidth="175.0" promptText="Member ID" />
+                  <TextField fx:id="bookIdTextField" prefWidth="175.0" promptText="Book ID" />
+               </children>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="800.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newCheckOutEntry" prefWidth="175.0" text="Check Out" />
+                  <Button mnemonicParsing="false" prefWidth="175.0" text="Check in" />
+                  <Button mnemonicParsing="false" text="Detailed Person View" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
