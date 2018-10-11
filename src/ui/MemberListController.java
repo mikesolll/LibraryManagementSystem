@@ -7,22 +7,32 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+
 import business.Person;
 import dataaccess.DataAccessFactory;
+import dataaccess.VisibilityControl;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Callback;
+
 
 
 
@@ -50,32 +60,57 @@ public class MemberListController{
 	private Label phoneNumberLabel;
 	@FXML
 	private Label stateLabel;
-	
+
 	public MemberListController(){
-		
+
 		//showPersonDetails(null);
 		//personTable.setItems(getPeople());
 	}
-	public void handleEditPerson() {
-		
-		
+	public void handleHomeButton() {
+		VisibilityControl.navigate("AdminView");
 		
 	}
+	public void handleEditPerson() {
+
+
+		Person selectedPerson = personTable.getSelectionModel().getSelectedItem();
+		if (selectedPerson != null) {
+			AddMemberController controller= VisibilityControl.navigate("AddMemberView").getController();
+			controller.setPerson(selectedPerson);
+
+		}
+
+		else {
+			// Nothing selected.
+			Alert alert = new Alert(AlertType.WARNING);
+			//alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("No Selection");
+			alert.setHeaderText("No Person Selected");
+			alert.setContentText("Please select a person in the table.");
+
+			alert.showAndWait();
+		}
+
+	}
+
+	/**
+	 * Initializes the controller class.
+	 */
 	@FXML
 	private void initialize() {
 		// Initialize the person table with the two columns.
-//		firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
-//		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+		//		firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+		//		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
 
 		preJava8();
 		// Clear person details.
 		personTable.setItems(getPeople());
-		//showPersonDetails(null);
+		showPersonDetails(null);
 
 		// Listen for selection changes and show the person details when
 		// changed.
 		personTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+		.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 
 	}
 	private void preJava8() {
@@ -117,50 +152,25 @@ public class MemberListController{
 			cityLabel.setText("");
 			ZipLabel.setText("");
 			stateLabel.setText("");
-			
-			
-			
+
+
+
 		}
 	}
-	/**
-     * Initializes the controller class.
-     */
-/*
-    public void initialize() {
-        //set up the columns in the table
-        firstNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
-        lastNameColumn.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
-       
-        
-        //load dummy data
-        personTable.setItems(getPeople());
-        
-        //Update the table to allow for the first and last name fields
-        //to be editable
-        //personTable.setEditable(true);
-        //firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        //lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        
-        //This will allow the table to select multiple rows at once
-       // personTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        
-        //Disable the detailed person view button until a row is selected
-        //this.detailedPersonViewButton.setDisable(true);
-    }*/
-    public ObservableList<Person>  getPeople()
-    {
-        ObservableList<Person> people = FXCollections.observableArrayList();
-        
-        HashMap<String,Person> selected= DataAccessFactory.getAllObject("member");
-        for(Person m:selected.values())
-        people.add(m);
-       // people.add(new Person("Frank","Sinatra",LocalDate.of(1915, Month.DECEMBER, 12), new Image("FrankSinatra.jpg")));
-        //people.add(new Person("Rebecca","Fergusson",LocalDate.of(1986, Month.JULY, 21)));
-        //people.add(new Person("Mr.","T",LocalDate.of(1952, Month.MAY, 21)));
-        
-        return people;
-    }
-	
+
+
+	public ObservableList<Person>  getPeople()
+	{
+		ObservableList<Person> people = FXCollections.observableArrayList();
+
+		HashMap<String,Person> selected= DataAccessFactory.getAllObject("member");
+		for(Person m:selected.values())
+			people.add(m);
+		
+
+		return people;
+	}
+
 
 
 }
