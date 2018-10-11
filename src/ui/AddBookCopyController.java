@@ -31,11 +31,19 @@ public class AddBookCopyController implements Initializable{
 
     public void addCopy(){
         Book book = (Book) books.getValue();
-       boolean isAdded= AddBookFactory.addCopy(Integer.parseInt(CopyNo.getText()),book.getIsbn());
-       if(isAdded){
-           clearValue();
-           ShowMessage.success("Book Copy","The copy is Added successfully");
-       }else ShowMessage.error("Book Copy","The is error while Adding the book");
+        if(!(CopyNo.getText()==null || CopyNo.getText().length()==0)) {
+        	 
+        	boolean isAdded= AddBookFactory.addCopy(Integer.parseInt(CopyNo.getText()),book.getIsbn());
+              if(isAdded){
+                  clearValue();
+                  ShowMessage.success("Book Copy","The copy is Added successfully");
+              }else ShowMessage.error("Book Copy","The is error while Adding the book");
+        }
+        else {
+        	ShowMessage.error("Copy Number", "Not a valid copy number");
+        }
+        
+     
     }
 
     @Override
