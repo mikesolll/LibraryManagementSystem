@@ -17,8 +17,7 @@ public class DataAccessSystem<T> implements DataAccess<T> {
     HashMap<String,T> lists= new HashMap<>();
 
     DataAccessSystem(String directory){
-        OUTPUT_DIR=System.getProperty("user.dir")
-                +"\\src\\docs\\"+directory+".txt" ;
+        OUTPUT_DIR=getClass().getClassLoader().getResource("docs/"+directory+".txt").getPath();
     }
 
 
