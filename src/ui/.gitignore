@@ -1,6 +1,7 @@
 /MemberListController$1.class
 /MemberListController$2.class
 /AddBookCopyController.class
+<<<<<<< HEAD
 /AddMemberController.class
 /AdministratorController.class
 /CheckOutController.class
@@ -11,3 +12,9 @@
 /MemberListController.class
 /CheckOutInController$1.class
 /CheckOutInController$2.class
+=======
+/CheckOutInController.class
+/CheckOutRecordController.class
+/UpdateMember.class
+>>>>>>> aa6578bcaf2cb600e17d25d8c3c6ed54c1bb58de
+/AddBookController.class

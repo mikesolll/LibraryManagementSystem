@@ -1,7 +1,13 @@
 package ui;
 
+
+
+import java.util.List;
+
 import business.AddPersonFactory;
+import business.LibraryMember;
 import business.Person;
+import business.PersonRole;
 import dataaccess.DataAccessFactory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,6 +42,35 @@ public class AddMemberController {
 	private Button addMember;
 	@FXML
 	private Button updateMember; // used to edit members
+	private Person person;
+	
+	/**
+	 * Sets the person to be edited in the dialog.
+	 *
+	 * @param person
+	 */
+	public void setPerson(Person person) {
+		this.person = person;
+
+		fNameText.setText(person.getFirstName());
+		lNameText.setText(person.getLastName());
+		streetText.setText(person.getAddress().getStreet());
+		phoneNumberText.setText(person.getPhoneNumber());
+		cityText.setText(person.getAddress().getCity());
+		stateText.setText(person.getAddress().getState());
+		zipText.setText(person.getAddress().getZip());
+		List<PersonRole> list= person.getPersonRole();
+		for(PersonRole pr:list) {
+			if(pr instanceof LibraryMember) {
+				
+				memberIDText.setText(((LibraryMember)pr).getMemberID());
+				break;
+			}
+				
+		}
+		memberIDText.setEditable(false);
+		
+	}
 	
 	public void addMember(ActionEvent event) {
 		
