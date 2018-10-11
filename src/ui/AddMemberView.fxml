@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="651.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AddMemberController">
+<AnchorPane prefHeight="565.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AddMemberController">
    <children>
       <Label fx:id="addMemberlabel" layoutX="102.0" layoutY="20.0" prefHeight="71.0" prefWidth="261.0" text="Add Member">
          <font>
@@ -66,5 +66,10 @@
       <TextField fx:id="cityText" layoutX="253.0" layoutY="328.0" />
       <TextField fx:id="stateText" layoutX="253.0" layoutY="357.0" />
       <TextField fx:id="zipText" layoutX="253.0" layoutY="387.0" />
+      <Button layoutX="402.0" layoutY="446.0" mnemonicParsing="false" onAction="#homeButton" prefHeight="44.0" prefWidth="99.0" text="Home">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -63,12 +63,10 @@ public class MemberListController{
 
 	public MemberListController(){
 
-		//showPersonDetails(null);
-		//personTable.setItems(getPeople());
 	}
 	public void handleHomeButton() {
 		VisibilityControl.navigate("AdminView");
-		
+
 	}
 	public void handleEditPerson() {
 
@@ -160,7 +158,7 @@ public class MemberListController{
 		HashMap<String,Person> selected= DataAccessFactory.getAllObject("member");
 		for(Person m:selected.values())
 			people.add(m);
-		
+
 
 		return people;
 	}

@@ -2,15 +2,19 @@ package ui;
 
 
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import business.AddPersonFactory;
 import business.LibraryMember;
 import business.Person;
 import business.PersonRole;
 import dataaccess.DataAccessFactory;
+import dataaccess.VisibilityControl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -51,6 +55,7 @@ public class AddMemberController {
 	 */
 	public void setPerson(Person person) {
 		this.person = person;
+		setUpdateVisible();
 
 		fNameText.setText(person.getFirstName());
 		lNameText.setText(person.getLastName());
@@ -72,6 +77,10 @@ public class AddMemberController {
 		
 	}
 	
+	public void homeButton(ActionEvent event) {
+		VisibilityControl.navigate("AdminView");
+		
+	} 
 	public void addMember(ActionEvent event) {
 		
 		Person person=AddPersonFactory.newMember(fNameText.getText(), lNameText.getText(),
@@ -80,20 +89,20 @@ public class AddMemberController {
 
 		DataAccessFactory.saveData(Storage.MEMBER.getVal(),memberIDText.getText(),person);
 	}
-	public void updateMember(ActionEvent event) {
-
-	}
+	
+	
+	
 	
 	public void setUpdateVisible() {
-		addMember.setVisible(false);
-		updateMember.setVisible(true);
+		addMember.setText("Update");;
 		addMemberlabel.setText("Edit Member");
 	}
 	public void addMemberVisible() {
-		addMember.setVisible(true);
-		updateMember.setVisible(false);
+		addMember.setText("Add");
 		addMemberlabel.setText("Add Member");
 	}
+
+	
 	
 
 }
