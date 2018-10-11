@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 
 
 public class CheckOutEntry implements Serializable {
@@ -16,12 +17,21 @@ public class CheckOutEntry implements Serializable {
 	private double fine;
 	private LocalDate datePaid;
 	private BookCopy book;
-	private SimpleStringProperty memberId;
-	private SimpleStringProperty bookId;
+	private String memberId;
+	private String bookId;
+	private String bookTitle;
+
+	public String getBookTitle() {
+		return bookTitle;
+	}
+
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
+	}
 
 	public CheckOutEntry(String memberId, String bookId,LocalDate checkOutDate, LocalDate dueDate, LocalDate datePaid, BookCopy book) {
-		this.bookId = new SimpleStringProperty(bookId);
-		this.memberId = new SimpleStringProperty (memberId);
+		this.bookId = bookId;
+		this.memberId = memberId;
 		this.checkOutDate = checkOutDate;
 		this.dueDate = dueDate;
 		//this.fine = fine;
@@ -30,25 +40,25 @@ public class CheckOutEntry implements Serializable {
 	}
 
 	public CheckOutEntry(String memberId, String bookId, LocalDate checkOutDate, LocalDate dueDate) {
-		this.bookId = new SimpleStringProperty(bookId);
-		this.memberId = new SimpleStringProperty (memberId);
+		this.bookId = bookId;
+		this.memberId =  memberId;
 		this.checkOutDate = checkOutDate;
 		this.dueDate = dueDate;
 	}
 
 	public String getMemberId() {
-		return memberId.get();
+		return memberId;
 	}
 
-	public void setMemberId(SimpleStringProperty memberId) {
+	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
 
 	public String getBookId() {
-		return bookId.get();
+		return bookId;
 	}
 
-	public void setBookId(SimpleStringProperty bookId) {
+	public void setBookId(String bookId) {
 		this.bookId = bookId;
 	}
 
@@ -97,5 +107,13 @@ public class CheckOutEntry implements Serializable {
 		return "CheckOutEntry [dateIssued=" + checkOutDate + ", dueDate=" + dueDate + ", fine=" + fine + ", datePaid="
 				+ datePaid + ", book=" + book + "]";
 	}
+	public ObservableValue<String> memberIdProperty() {
+		// TODO Auto-generated method stub
+		return new SimpleStringProperty(memberId);
+	}
+	public ObservableValue<String> bookIdProperty() {
+		// TODO Auto-generated method stub
+		return new SimpleStringProperty(bookId);
+	} 
 
 }
