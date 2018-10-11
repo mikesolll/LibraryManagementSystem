@@ -81,7 +81,6 @@ public class MemberListController{
 		else {
 			// Nothing selected.
 			Alert alert = new Alert(AlertType.WARNING);
-			//alert.initOwner(mainApp.getPrimaryStage());
 			alert.setTitle("No Selection");
 			alert.setHeaderText("No Person Selected");
 			alert.setContentText("Please select a person in the table.");
@@ -96,22 +95,18 @@ public class MemberListController{
 	 */
 	@FXML
 	private void initialize() {
-		// Initialize the person table with the two columns.
-		//		firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
-		//		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
 
-		preJava8();
+		showTable();
 		// Clear person details.
 		personTable.setItems(getPeople());
 		showPersonDetails(null);
 
-		// Listen for selection changes and show the person details when
-		// changed.
+
 		personTable.getSelectionModel().selectedItemProperty()
 		.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 
 	}
-	private void preJava8() {
+	private void showTable() {
 		firstNameColumn.setCellValueFactory(new Callback<CellDataFeatures<Person, String>, ObservableValue<String>>() {
 
 			@Override
@@ -139,8 +134,7 @@ public class MemberListController{
 			ZipLabel.setText(person.getAddress().getZip());
 			stateLabel.setText(person.getAddress().getState());
 
-			// TODO: We need a way to convert the birthday into a String!
-			// birthdayLabel.setText(...);
+
 		} else {
 			// Person is null, remove all the text.
 			firstNameLabel.setText("");
