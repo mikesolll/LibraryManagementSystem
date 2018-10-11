@@ -190,7 +190,7 @@ public class CheckOutInController {
 			}else {
 				HashMap<String, Book> bookHasMap = DataAccessFactory.getAllObject("book");
 				String title = bookHasMap.get(bookIdTextField.getText()).getTitle();
-				CheckOutEntry newCheckOutEntry = new CheckOutEntry(memberIdTextField.getText(), bookIdTextField.getText(),
+				CheckOutEntry newCheckOutEntry =CheckoutRecordFactory.createCheckoutRecord(memberIdTextField.getText(), bookIdTextField.getText(),
 						LocalDate.now(), LocalDate.now().plusDays(7),title);
 
 
