@@ -29,24 +29,7 @@ public class CheckOutEntry implements Serializable {
 		this.bookTitle = bookTitle;
 	}
 
-	public CheckOutEntry(String memberId, String bookId,LocalDate checkOutDate, LocalDate dueDate, LocalDate datePaid, BookCopy book) {
-		this.bookId = bookId;
-		this.memberId = memberId;
-		this.checkOutDate = checkOutDate;
-		this.dueDate = dueDate;
-		//this.fine = fine;
-		this.datePaid = datePaid;
-		this.book = book;
-	}
-
-	public CheckOutEntry(String memberId, String bookId, LocalDate checkOutDate, LocalDate dueDate) {
-		this.bookId = bookId;
-		this.memberId =  memberId;
-		this.checkOutDate = checkOutDate;
-		this.dueDate = dueDate;
-	}
-
-	public CheckOutEntry(String memberId, String bookId, LocalDate checkOutDate, LocalDate dueDate, String title) {
+	CheckOutEntry(String memberId, String bookId, LocalDate checkOutDate, LocalDate dueDate, String title) {
 		this.bookId = bookId;
 		this.memberId =  memberId;
 		this.checkOutDate = checkOutDate;
