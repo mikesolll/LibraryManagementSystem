@@ -1,7 +1,6 @@
 package dataaccess;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class DataAccessFactory<T> {
     private DataAccessFactory(){}
@@ -20,5 +19,10 @@ public class DataAccessFactory<T> {
     public static <T> HashMap<String,T> getAllObject(String directory){
         DataAccess<T> dataAccess= new DataAccessSystem<>(directory);
         return dataAccess.getAllObject();
+    }
+
+    public static <T> boolean replaceOnject(String directory,HashMap<String,T> tList){
+        DataAccess<T> dataAccess= new DataAccessSystem<>(directory);
+        return dataAccess.replaceObject(tList);
     }
 }

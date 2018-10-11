@@ -42,7 +42,7 @@ public class Book implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Book [isbn=" + isbn + ", title=" + title + "]";
+		return  title  + ":" + isbn ;
 	}
 
 	public Integer getNoOfAvailableCopy() {

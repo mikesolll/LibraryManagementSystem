@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import util.ShowMessage;
 
 public class AddBookController {
 	
@@ -47,9 +48,32 @@ public class AddBookController {
 				stateText.getText(), zipText.getText(), credentialText.getText(), 
 				shortBioText.getText());
 		
-		AddBookFactory.addBook(ISBNText.getText(), titleText.getText(),Integer.parseInt(noOfCopy.getText()), Arrays.asList(author));
-		AddBookFactory.addCopy(noOfCopy.getText(),ISBNText.getText());
+		boolean isBookAdded=AddBookFactory.addBook(ISBNText.getText(), titleText.getText(),Integer.parseInt(noOfCopy.getText()), Arrays.asList(author));
+		boolean isCopyAdded=AddBookFactory.addCopy(noOfCopy.getText(),ISBNText.getText());
+
+		if(isBookAdded && isCopyAdded){
+			ShowMessage.success("Book and Book copy are Added Successfully");
+			clearValue();
+		}else ShowMessage.error("There is error while added ");
 		
+	}
+
+	public void clearValue() {
+		lNameText.setText("");
+
+		phoneNumberText.setText("");
+
+		streetText.setText("");
+
+		cityText.setText("");
+
+		stateText.setText("");
+
+		zipText.setText("");
+
+		credentialText.setText("");
+
+		shortBioText.setText("");
 	}
 
 }

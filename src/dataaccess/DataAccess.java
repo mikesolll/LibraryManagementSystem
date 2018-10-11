@@ -12,4 +12,6 @@ public interface DataAccess<T> {
 
     boolean saveAllObject(HashMap<String,T> t);
 
+    boolean replaceObject(HashMap<String,T> t);
+
 }
