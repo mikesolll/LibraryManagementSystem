@@ -3,7 +3,11 @@ package business;
 import java.io.Serializable;
 
 public class BookCopyEntity implements Serializable {
-    private String copyNo;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5616939060914734040L;
+	private String copyNo;
     private boolean availablity;
     private String  ISBN;
 

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-
+import business.CheckOutEntry;
 import business.Person;
 import dataaccess.DataAccessFactory;
 import dataaccess.VisibilityControl;
@@ -98,13 +98,15 @@ public class MemberListController{
 
 		showTable();
 		// Clear person details.
-		personTable.setItems(getPeople());
 		showPersonDetails(null);
+		personTable.setItems(getPeople());
+		
 
 
 		personTable.getSelectionModel().selectedItemProperty()
 		.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
-
+		
+		
 	}
 	private void showTable() {
 		firstNameColumn.setCellValueFactory(new Callback<CellDataFeatures<Person, String>, ObservableValue<String>>() {
