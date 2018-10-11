@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="531.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AdministratorController">
+   <children>
+      <Label fx:id="adminLabel" layoutX="91.0" layoutY="45.0" prefHeight="59.0" prefWidth="445.0" text="Administrator" textAlignment="CENTER" textFill="#00000091">
+         <font>
+            <Font name="System Bold Italic" size="41.0" />
+         </font>
+      </Label>
+      <Button fx:id="addMemberButton" layoutX="117.0" layoutY="175.0" mnemonicParsing="false" onAction="#addMember" prefHeight="50.0" prefWidth="208.0" text="Add Member">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="editMemberButton" layoutX="117.0" layoutY="239.0" mnemonicParsing="false" onAction="#editMember" prefHeight="54.0" prefWidth="208.0" text="Edit Member">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="addBookButton" layoutX="117.0" layoutY="307.0" mnemonicParsing="false" onAction="#addBooks" prefHeight="54.0" prefWidth="208.0" text="Add Book">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="checkoutBookButton" layoutX="117.0" layoutY="114.0" mnemonicParsing="false" onAction="#checkoutBook" prefHeight="54.0" prefWidth="208.0" text="Checkout Book">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="logout" layoutX="446.0" layoutY="478.0" mnemonicParsing="false" onAction="#logout" prefHeight="39.0" prefWidth="91.0" text="Logout" />
+      <Button fx:id="addBookCopy" layoutX="117.0" layoutY="372.0" mnemonicParsing="false" onAction="#addBookCopy" prefHeight="54.0" prefWidth="208.0" text="Add Book Copy">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

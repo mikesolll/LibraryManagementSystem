@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.CheckOutInController">
+   <children>
+      <Button layoutX="551.0" layoutY="516.0" mnemonicParsing="false" onAction="#goHome" prefHeight="17.0" prefWidth="211.0" text="Home" />
+      <VBox layoutX="1.0" layoutY="121.0" prefHeight="346.0" prefWidth="800.0" spacing="10.0">
+         <children>
+            <TableView fx:id="tableView" prefHeight="201.0" prefWidth="800.0">
+              <columns>
+                  <TableColumn fx:id="MemberID" prefWidth="140.0" text="Member ID" />
+                  <TableColumn fx:id="bookID" prefWidth="117.0" text="Book ID" />
+                  <TableColumn fx:id="dueDate" prefWidth="127.0" text="Due Date" />
+                  <TableColumn fx:id="checkOutDate" prefWidth="177.0" text="Check Out Date" />
+                  <TableColumn fx:id="title" prefWidth="238.0" text="Title" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="800.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="memberIdTextField" prefWidth="175.0" promptText="Member ID" />
+                  <TextField fx:id="bookIdTextField" prefWidth="175.0" promptText="Book ID" />
+               </children>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="800.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newCheckOutEntry" prefWidth="175.0" text="Check Out" />
+                  <Button mnemonicParsing="false" onAction="#deleteButtonPushed" prefWidth="175.0" text="Check in" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="181.0" layoutY="22.0" text="Check Out Record">
+         <font>
+            <Font size="58.0" />
+         </font>
+      </Label>
+      <TextField fx:id="filterMemberId" layoutX="1.0" layoutY="477.0" prefWidth="175.0" promptText="Member ID" />
+      <Button layoutX="187.0" layoutY="477.0" mnemonicParsing="false" onAction="#filterById" prefHeight="20.0" prefWidth="175.0" text="Filter" />
+   </children>
+</AnchorPane>

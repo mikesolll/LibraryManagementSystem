@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+
 public class Person implements Serializable {
 	
 	/**
@@ -16,12 +19,13 @@ public class Person implements Serializable {
 	private Address address;
 	private List<PersonRole> personRole;
 	//Package level
-	 Person(String firstName, String lastName,String phoneNumber) {
+	 Person(String firstName, String lastName,String phoneNumber,Address address) {
 		// TODO Auto-generated constructor stub
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.phoneNumber=phoneNumber;
 		personRole= new ArrayList<>();
+		this.address=address;
 		
 	}
 	public String getFirstName() {
@@ -51,6 +55,11 @@ public class Person implements Serializable {
 	public void addPersonRole(PersonRole Role) {
 		personRole.add(Role);
 	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
 		return "Person [firstName=" + firstName + 
@@ -84,5 +93,13 @@ public class Person implements Serializable {
 			return false;
 		return true;
 	}
+	public ObservableValue<String> firstNameProperty() {
+		// TODO Auto-generated method stub
+		return new SimpleStringProperty(firstName);
+	}
+	public ObservableValue<String> lastNameProperty() {
+		// TODO Auto-generated method stub
+		return new SimpleStringProperty(lastName);
+	} 
 	
 }

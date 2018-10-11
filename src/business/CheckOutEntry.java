@@ -3,33 +3,62 @@ package business;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+
 
 public class CheckOutEntry implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 414058464577082661L;
-	private LocalDate dateIssued;
+	private LocalDate checkOutDate;
 	private LocalDate dueDate;
 	private double fine;
 	private LocalDate datePaid;
 	private BookCopy book;
+	private String memberId;
+	private String bookId;
+	private String bookTitle;
 
-	CheckOutEntry(LocalDate dateIssued, LocalDate dueDate, double fine, LocalDate datePaid, BookCopy book) {
-		
-		this.dateIssued = dateIssued;
+	public String getBookTitle() {
+		return bookTitle;
+	}
+
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
+	}
+
+	CheckOutEntry(String memberId, String bookId, LocalDate checkOutDate, LocalDate dueDate, String title) {
+		this.bookId = bookId;
+		this.memberId =  memberId;
+		this.checkOutDate = checkOutDate;
 		this.dueDate = dueDate;
-		this.fine = fine;
-		this.datePaid = datePaid;
-		this.book = book;
+		bookTitle = title;
 	}
 
-	public LocalDate getDateIssued() {
-		return dateIssued;
+	public String getMemberId() {
+		return memberId;
 	}
 
-	public void setDateIssued(LocalDate dateIssued) {
-		this.dateIssued = dateIssued;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
+	public String getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
+
+	public LocalDate getCheckOutDate() {
+		return checkOutDate;
+	}
+
+	public void setCheckOutdate(LocalDate checkOutDate) {
+		this.checkOutDate = checkOutDate;
 	}
 
 	public LocalDate getDueDate() {
@@ -66,8 +95,17 @@ public class CheckOutEntry implements Serializable {
 
 	@Override
 	public String toString() {
-		return "CheckOutEntry [dateIssued=" + dateIssued + ", dueDate=" + dueDate + ", fine=" + fine + ", datePaid="
+		return "CheckOutEntry [dateIssued=" + checkOutDate + ", dueDate=" + dueDate + ", fine=" + fine + ", datePaid="
 				+ datePaid + ", book=" + book + "]";
+	}
+	public ObservableValue<String> memberIdProperty() {
+		return new SimpleStringProperty(memberId);
+	}
+	public ObservableValue<String> bookIdProperty() {
+		return new SimpleStringProperty(bookId);
+	}
+	public ObservableValue<String> titleIdPropery(){
+		return new SimpleStringProperty(bookTitle);
 	}
 
 }

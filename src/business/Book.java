@@ -11,11 +11,14 @@ public class Book implements Serializable{
 	private static final long serialVersionUID = 6628836143037312293L;
 	private String isbn;
 	private String title;
+	private Integer NoOfAvailableCopy;
 	private List<Author> author;
 	
-	Book(String ISBN, String title){
+	Book(String ISBN, String title,Integer NoOfAvailableCopy,List<Author> author){
 		isbn = ISBN;
+		this.NoOfAvailableCopy =NoOfAvailableCopy;
 		this.title = title;
+		this.author=author;
 		
 		
 	}
@@ -39,10 +42,17 @@ public class Book implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Book [isbn=" + isbn + ", title=" + title + "]";
+		return  title  + ":" + isbn ;
 	}
 
-	
+	public Integer getNoOfAvailableCopy() {
+		return NoOfAvailableCopy;
+	}
+
+	public void setNoOfAvailableCopy(Integer noOfAvailableCopy) {
+		NoOfAvailableCopy = noOfAvailableCopy;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

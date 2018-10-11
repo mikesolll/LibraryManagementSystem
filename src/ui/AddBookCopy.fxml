@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AddBookCopyController">
+   <children>
+      <ComboBox fx:id="books" layoutX="184.0" layoutY="102.0" prefHeight="39.0" prefWidth="303.0" />
+      <Label layoutX="53.0" layoutY="108.0" prefHeight="27.0" prefWidth="64.0" text="Book">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="CopyNo" layoutX="188.0" layoutY="190.0" prefHeight="39.0" prefWidth="303.0" />
+      <Label layoutX="53.0" layoutY="196.0" text="Copy No">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="addCopy" layoutX="325.0" layoutY="277.0" mnemonicParsing="false" onAction="#addCopy" prefHeight="39.0" prefWidth="166.0" text="Add Copy" />
+      <Button layoutX="508.0" layoutY="347.0" mnemonicParsing="false" onAction="#goHome" prefHeight="39.0" prefWidth="82.0" text="Home">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
