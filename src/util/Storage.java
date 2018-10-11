@@ -1,7 +1,7 @@
 package util;
 
 public enum Storage {
-    BOOK("book"),BOOKCOPY("bookCopy"),MEMBER("member"),USER("user");
+    BOOK("book"),BOOKCOPY("bookCopy"),MEMBER("member"),USER("user"),CHECKOUTENTRY("checkoutentry");
 
     private  String val;
     private Storage(String val){

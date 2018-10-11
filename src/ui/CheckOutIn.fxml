@@ -7,22 +7,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.CheckOutInController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.CheckOutInController">
    <children>
-      <Button layoutX="551.0" layoutY="516.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="211.0" text="Go Back to GUI Objects View" />
-      <VBox layoutY="6.0" prefHeight="404.0" prefWidth="800.0" spacing="10.0">
+      <Button layoutX="551.0" layoutY="516.0" mnemonicParsing="false" onAction="#goHome" prefHeight="17.0" prefWidth="211.0" text="Home" />
+      <VBox layoutX="1.0" layoutY="121.0" prefHeight="376.0" prefWidth="800.0" spacing="10.0">
          <children>
-            <Label text="Check In/OUt">
-               <font>
-                  <Font name="System Bold Italic" size="18.0" />
-               </font>
-            </Label>
-            <TableView fx:id="tableView" onMouseClicked="#userClickedOnTable" prefHeight="201.0" prefWidth="800.0">
+            <TableView fx:id="tableView" prefHeight="201.0" prefWidth="800.0">
               <columns>
                   <TableColumn fx:id="MemberID" prefWidth="140.0" text="Member ID" />
                   <TableColumn fx:id="bookID" prefWidth="117.0" text="Book ID" />
                   <TableColumn fx:id="dueDate" prefWidth="127.0" text="Due Date" />
                   <TableColumn fx:id="checkOutDate" prefWidth="177.0" text="Check Out Date" />
+                  <TableColumn prefWidth="238.0" text="Title" />
               </columns>
             </TableView>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -34,11 +30,15 @@
             <HBox prefHeight="0.0" prefWidth="800.0" spacing="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#newCheckOutEntry" prefWidth="175.0" text="Check Out" />
-                  <Button mnemonicParsing="false" prefWidth="175.0" text="Check in" />
-                  <Button mnemonicParsing="false" text="Detailed Person View" />
+                  <Button mnemonicParsing="false" onAction="#deleteButtonPushed" prefWidth="175.0" text="Check in" />
                </children>
             </HBox>
          </children>
       </VBox>
+      <Label layoutX="181.0" layoutY="22.0" text="Check Out Record">
+         <font>
+            <Font size="58.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
